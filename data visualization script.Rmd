@@ -9,3 +9,25 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Data visualization 
+Loading libraries
+```{r}
+library(dplyr)
+```
+
+Import dataset
+```{r}
+# reading the csv file
+hf.crop.prod <- read.csv("data/hf.crops_combined.csv")
+hf.crop.prod
+
+#unique(hf.crop.prod[,"crop_type"])
+```
+
+Data transformation using dplyr
+```{r}
+# filter only for food crops and year 2015
+year_2015 <- filter(hf.crop.prod, year==2015)
+year_2015
+```
+
